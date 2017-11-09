@@ -1,0 +1,28 @@
+{
+  "name": "Todo_History",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "lastUpdateAt": {
+      "type": "date",
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "todo": {
+      "type": "belongsTo",
+      "model": "Todo",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
