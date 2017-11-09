@@ -15,7 +15,14 @@ module.exports = function (Todo) {
         next()
       })
     }
+    console.log(ctx.method.name);
+    if (ctx.method.name === 'deleteById') {
+      Todo.observe('before delete', function (ctx, next) {
+        console.log(ctx.Model, ctx.where);
+        TodoHistory.deleteAll({where: {todoId: ctx.where.id}})
+        next()
+      })
+    }
     next()
   })
-
 }

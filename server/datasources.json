@@ -1,12 +1,12 @@
 {
   "postgres": {
-    "host": "baasu.db.elephantsql.com",
+    "host": "localhost",
     "port": 5432,
-    "url": "postgres://luqsolid:DSePseh8m9oLpxWUXjiwXAsRvT-GntJx@baasu.db.elephantsql.com:5432/luqsolid",
-    "database": "luqsolid",
-    "password": "DSePseh8m9oLpxWUXjiwXAsRvT-GntJx",
-    "name": "luqsolid",
-    "user": "luqsolid",
+    "url": "postgres://postgres:root@localhost/postgres",
+    "database": "postgres",
+    "password": "root",
+    "name": "postgres",
+    "user": "postgres",
     "connector": "postgresql"
   }
 }
