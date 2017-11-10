@@ -1,12 +1,12 @@
 {
   "postgres": {
-    "host": "localhost",
+    "host": "ec2-50-19-236-223.compute-1.amazonaws.com",
     "port": 5432,
-    "url": "postgres://postgres:postgres@localhost/postgres",
-    "database": "postgres",
-    "password": "postgres",
-    "name": "postgres",
-    "user": "postgres",
+    "url": "postgres://hricjulbsnnplw:3730b84955fe6b3ac789470118bf28b35322be256498e68c52615f8f5027d171@ec2-50-19-236-223.compute-1.amazonaws.com:5432/dbq8c66ej7pnp6?ssl=true",
+    "database": "dbq8c66ej7pnp6",
+    "password": "3730b84955fe6b3ac789470118bf28b35322be256498e68c52615f8f5027d171",
+    "name": "luqsolid",
+    "user": "hricjulbsnnplw",
     "connector": "postgresql"
   }
 }
