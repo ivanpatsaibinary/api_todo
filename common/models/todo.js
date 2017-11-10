@@ -2,27 +2,21 @@
 
 module.exports = function (Todo) {
   var app = require('../../server/server')
-
-  Todo.beforeRemote('**', function (ctx, modelInstance, next) {
+  //create new row in history table with current todo value and update todo
+  Todo.beforeRemote('replaceById', function (context, modelInstance, next) {
     var TodoHistory = app.models.Todo_History
-    if (ctx.method.name === 'replaceById') {
-      Todo.observe('before save', function (ctx, next) {
-        Todo.findById(ctx.instance.id, {limit: 1},
-          function (err, instance) {
-            console.log('aaaa', instance)
-            TodoHistory.create({name: instance.name, todoId: instance.id})
-          })
-        next()
+    Todo.findById(context.args.id, {limit: 1},
+      function (err, instance) {
+        TodoHistory.create({name: instance.name, todoId: instance.id})
       })
-    }
-    console.log(ctx.method.name);
-    if (ctx.method.name === 'deleteById') {
-      Todo.observe('before delete', function (ctx, next) {
-        console.log(ctx.Model, ctx.where);
-        TodoHistory.deleteAll({where: {todoId: ctx.where.id}})
-        next()
-      })
-    }
+    next()
+  })
+  //delete all history for todo along with todo
+  Todo.beforeRemote('deleteById', function (context, modelInstance, next) {
+    var TodoHistory = app.models.Todo_History
+    TodoHistory.destroyAll({todoId: context.args.id}, function (
+      err, info) {
+    })
     next()
   })
 }

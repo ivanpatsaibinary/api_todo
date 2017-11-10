@@ -2,9 +2,9 @@
   "postgres": {
     "host": "localhost",
     "port": 5432,
-    "url": "postgres://postgres:root@localhost/postgres",
+    "url": "postgres://postgres:postgres@localhost/postgres",
     "database": "postgres",
-    "password": "root",
+    "password": "postgres",
     "name": "postgres",
     "user": "postgres",
     "connector": "postgresql"
