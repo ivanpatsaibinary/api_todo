@@ -14,11 +14,11 @@
     ]
   },
   "Todo": {
-    "dataSource": "postgres",
+    "dataSource": "mongodb",
     "public": true
   },
   "Todo_History": {
-    "dataSource": "postgres",
+    "dataSource": "mongodb",
     "public": true
   }
 }
