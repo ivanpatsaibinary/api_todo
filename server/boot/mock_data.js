@@ -21,6 +21,66 @@ module.exports = function (app) {
         {
           name: 'Todo 3',
         },
+        {
+          name: 'Todo 2',
+        },
+        {
+          name: 'Todo 3',
+        },
+        {
+          name: 'Todo 2',
+        },
+        {
+          name: 'Todo 3',
+        },
+        {
+          name: 'Todo 2',
+        },
+        {
+          name: 'Todo 3',
+        },
+        {
+          name: 'Todo 2',
+        },
+        {
+          name: 'Todo 3',
+        },
+        {
+          name: 'Todo 2',
+        },
+        {
+          name: 'Todo 3',
+        },
+        {
+          name: 'Todo 2',
+        },
+        {
+          name: 'Todo 3',
+        },
+        {
+          name: 'Todo 2',
+        },
+        {
+          name: 'Todo 3',
+        },
+        {
+          name: 'Todo 2',
+        },
+        {
+          name: 'Todo 3',
+        },
+        {
+          name: 'Todo 2',
+        },
+        {
+          name: 'Todo 3',
+        },
+        {
+          name: 'Todo 2',
+        },
+        {
+          name: 'Todo 3',
+        },
       ]
     )
     console.log('Todo created')

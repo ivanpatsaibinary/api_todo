@@ -10,7 +10,6 @@ module.exports = function (Todo) {
   })
   //create new row in history table with current todo value and update todo
   Todo.beforeRemote('replaceById', function (context, modelInstance, next) {
-    let i
     context.args.data.name = filter.clean(context.args.data.name)
     var TodoHistory = app.models.Todo_History
     Todo.findById(context.args.id, {limit: 1},
