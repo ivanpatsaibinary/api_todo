@@ -5,7 +5,8 @@ module.exports = function (Todo) {
   var Filter = require('bad-words'),
     filter = new Filter()
   Todo.beforeRemote('find', function (context, modelInstance, next) {
-    context.args.filter = {order: ['completed ASC', 'lastUpdateAt DESC']}
+    context.args.filter = Object.assign({}, context.args.filter,
+      {order: ['completed ASC', 'lastUpdateAt DESC']})
     next()
   })
 
