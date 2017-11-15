@@ -12,18 +12,26 @@ module.exports = function (Todo) {
 
   Todo.beforeRemote('create', function (context, modelInstance, next) {
     context.args.data.name = filter.clean(context.args.data.name)
+    context.args.data.createdAt = Date.now()
+    context.args.data.lastUpdateAt = Date.now()
     next()
   })
   //create new row in history table with current todo value and update todo
-  Todo.beforeRemote('replaceById', function (context, modelInstance, next) {
-    context.args.data.name = filter.clean(context.args.data.name)
-    var TodoHistory = app.models.Todo_History
-    Todo.findById(context.args.id, {limit: 1},
-      function (err, instance) {
-        TodoHistory.create({name: instance.name, todoId: instance.id})
-      })
-    next()
-  })
+  Todo.beforeRemote('prototype.patchAttributes',
+    function (context, modelInstance, next) {
+      context.args.data.name = filter.clean(context.args.data.name)
+      context.args.data.lastUpdateAt = Date.now()
+      var TodoHistory = app.models.Todo_History
+      Todo.findById(context.args.data.id, {limit: 1},
+        function (err, instance) {
+          TodoHistory.create({
+            name: instance.name,
+            todoId: instance.id,
+            createdAt: instance.lastUpdateAt,
+          })
+        })
+      next()
+    })
   //delete all history for todo along with todo
   Todo.beforeRemote('deleteById', function (context, modelInstance, next) {
     var TodoHistory = app.models.Todo_History

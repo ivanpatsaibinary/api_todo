@@ -11,12 +11,10 @@
       "required": true
     },
     "lastUpdateAt": {
-      "type": "date",
-      "default": "$now"
+      "type": "date"
     },
     "createdAt": {
-      "type": "date",
-      "default": "$now"
+      "type": "date"
     },
     "completed": {
       "type": "boolean",

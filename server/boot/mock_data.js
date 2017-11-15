@@ -93,26 +93,36 @@ module.exports = function (app) {
       {
         name: 'update 1',
         todoId: 1,
+        createdAt: Date.now(),
       },
       {
         name: 'update 2',
         todoId: 1,
+        createdAt: Date.now(),
+
       },
       {
         name: 'update 3',
         todoId: 1,
+        createdAt: Date.now(),
+
       },
       {
         name: 'update 12',
         todoId: 2,
+        createdAt: Date.now(),
+
       },
       {
         name: 'update 22',
         todoId: 2,
+        createdAt: Date.now(),
+
       },
       {
         name: 'update 32',
         todoId: 2,
+        createdAt: Date.now(),
       },
     ])
     console.log('Todo_History created')
