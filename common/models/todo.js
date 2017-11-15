@@ -27,7 +27,7 @@ module.exports = function (Todo) {
           TodoHistory.create({
             name: instance.name,
             todoId: instance.id,
-            createdAt: instance.lastUpdateAt,
+            lastUpdateAt: instance.lastUpdateAt,
           })
         })
       next()
